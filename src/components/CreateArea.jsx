@@ -1,4 +1,7 @@
 import React from "react";
+import AddIcon from '@material-ui/icons/Add';
+import Fab from '@material-ui/core/Fab';
+
 
 function CreateArea(props) {
     const [note, setNote] = React.useState({ title: "", content: "" });
@@ -19,7 +22,7 @@ function CreateArea(props) {
     }
     return (
         <div>
-            <form>
+            <form className="create-note">
                 <input
                     name="title"
                     placeholder="Title"
@@ -33,9 +36,9 @@ function CreateArea(props) {
                     onChange={onNoteChange}
                     value={note.content}
                 />
-                <button type="submit" onClick={onButtonClick}>
-                    Add
-        </button>
+                <Fab type="submit" onClick={onButtonClick}>
+                    <AddIcon />
+                </Fab>
             </form>
         </div>
     );
